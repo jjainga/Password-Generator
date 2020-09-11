@@ -37,6 +37,11 @@ if (passwordLength < 8 ||
         alert("Please select a legnth between 8 and 128, thank you.")
     }
 
+var criteriaArr = [{lower}, {upper}, {number}, {symb}].filter (
+item => Object.values(item)[0]
+);
+console.log(criteriaArr)
+
 console.log(passwordLength)
 // Create array for combining all the chosen characters
 var passwordHolder =[]
@@ -45,33 +50,31 @@ for(var i =0; i<passwordLength;i++) {
 
 }
 
+//Object containing functions to generate random characters
+var passwordFunctions = {
+    //Functions for generating random characters
+    lowerCase: function randomLowCase() {
+     return String.fromCharCode(Math.floor(Math.random()*26)+97);
+    },
+    
+    upperCase: function randomUpperCase() {
+        return String.fromCharCode(Math.floor(Math.random()*26)+65);   
+    },
+    
+    numbers: function randomNumber() {
+        return String.fromCharCode(Math.floor(Math.random()*10)+48);   
+    },
+    
+    symbols: function randomSymbol() {
+        const symbol = ["!", "@", "#", "$", "%", "^", "&", "<", ">", "{", "}", "/", "?", "=", "+", "-", "_"]
+        return symbol[Math.floor(Math.random()* symbol.length)];
+        
+    }}
 //Array of the methods fromt he object passwordfunctions
 var passwordFunc = [passwordFunctions.lowerCase(), passwordFunctions.upperCase(), passwordFunctions.numbers(), passwordFunctions.symbols()]
 
-var passwordFunctions = {
-//Functions for generating random characters
-lowerCase: function randomLowCase() {
- return String.fromCharCode(Math.floor(Math.random()*26)+97);
-},
-
-upperCase: function randomUpperCase() {
-    return String.fromCharCode(Math.floor(Math.random()*26)+65);   
-},
-
-numbers: function randomNumber() {
-    return String.fromCharCode(Math.floor(Math.random()*10)+48);   
-},
-
-symbols: function randomSymbol() {
-    const symbol = ["!", "@", "#", "$", "%", "^", "&", "<", ">", "{", "}", "/", "?", "=", "+", "-", "_"]
-    return symbol[Math.floor(Math.random()* symbol.length)];
-    
-}}
-
-
-
-//Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+// //Add event listener to generate button
+// generateBtn.addEventListener("click", writePassword);
 
 
 //Console Logs to check functions
