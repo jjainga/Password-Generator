@@ -1,42 +1,55 @@
+//Prompting the user if they want a password
+var start = confirm("Do you want to generate a password?")
 
 
+
+//Prompts for user to input what they want for 
+var lower = confirm("Do you want to use lower case letters in your password?")
+var upper = confirm("Do you want to use upper case letters in your password?")
+var number = confirm("Do you want to use numbers in your password?")
+var symb = confirm("Do you want to use symbols in your password?")
+var length = prompt("How many characters would you like between 8 and 128?")
+
+var passwordlength = Number(length)
+
+console.log(passwordlength)
+
+//Conditions to use the functions
+
+var passwordfunctions = {
 //Functions for generating random characters
-function randomLowCase() {
+lowerCase: function randomLowCase() {
  return String.fromCharCode(Math.floor(Math.random()*26)+97);
- 
-}
+},
 
-function randomUpperCase() {
-    return String.fromCharCode(Math.floor(Math.random()*26)+65);
-    
-}
+upperCase: function randomUpperCase() {
+    return String.fromCharCode(Math.floor(Math.random()*26)+65);   
+},
 
-function randomNumber() {
-    return String.fromCharCode(Math.floor(Math.random()*10)+48);
-    
-}
+numbers: function randomNumber() {
+    return String.fromCharCode(Math.floor(Math.random()*10)+48);   
+},
 
-function randomSymbol() {
+symbols: function randomSymbol() {
     const symbol = ["!", "@", "#", "$", "%", "^", "&", "<", ">", "{", "}", "/", "?", "=", "+", "-", "_"]
     return symbol[Math.floor(Math.random()* symbol.length)];
     
-}
-
+}}
 //Console Logs to check functions
 
-console.log(randomLowCase())
+console.log(passwordfunctions.lowerCase())
 
 console.log("---------------------")
 
-console.log(randomUpperCase())
+console.log(passwordfunctions.upperCase())
 
 console.log("---------------------")
 
-console.log(randomNumber())
+console.log(passwordfunctions.numbers())
 
 console.log("---------------------")
 
-console.log(randomSymbol())
+console.log(passwordfunctions.symbols())
 
 
 
