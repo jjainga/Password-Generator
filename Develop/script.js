@@ -1,13 +1,13 @@
-// //Asignment Code
-// var generateBtn = document.querySelector("#generate");
+//Asignment Code
+var generateBtn = document.querySelector("#generate");
 
-// //Write password to the #password input
-// function writepassword() {
-//     var password = generatePassword();
-//     var passwordText = document.querySelector("#password");
+//Write password to the #password input
+function writepassword() {
+    var password = generatePassword();
+    var passwordText = document.querySelector("#password");
 
-//     passwordText.value = passwaord;
-// }
+    passwordText.value = passwaord;
+}
 
 //Prompting the user if they want a password
 var start = confirm("Do you want to generate a password?")
@@ -68,9 +68,10 @@ symbols: function randomSymbol() {
     
 }}
 
-//TODO: Add validations to make sure atleast one type of char is selected and alert user if no types are selected
 
-//TODO: After I m done with the prompts a password is  generated
+
+//Add event listener to generate button
+generateBtn.addEventListener("click", writePassword);
 
 
 //Console Logs to check functions
@@ -88,27 +89,3 @@ console.log(passwordFunctions.numbers())
 console.log("---------------------")
 
 console.log(passwordFunctions.symbols())
-
-
-
-
-
-
-
-
-
-// Assignment Code
-//var generateBtn = document.querySelector("#generate");
-
-// Write password to the #password input
-//function writePassword() {
- // var password = generatePassword();
- // var passwordText = document.querySelector("#password");
-
-  //passwordText.value = password;
-
-//}
-
-// Add event listener to generate button
-//generateBtn.addEventListener("click", writePassword);
- 
