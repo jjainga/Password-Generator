@@ -22,8 +22,7 @@ if (lower === false &&
     number === false && 
     symb === false ||
     passwordLength < 8 ||
-    passwordLength > 128 ||
-    ) {
+    passwordLength > 128) {
         alert("Please select at least one criteria and make sure the password length is between 8 and 128 characters to generate your password.")
     }
 else {
